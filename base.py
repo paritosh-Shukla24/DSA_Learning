@@ -110,4 +110,4 @@ zipped=[(2, 7), (3, 8), (4, 9)]
 print(zipped.sort(key=lambda x: x[1]))
 
 
-arr=list(map(int,input().split()))
+# arr=list(map(int,input().split()))ye
