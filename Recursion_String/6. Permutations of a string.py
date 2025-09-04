@@ -25,17 +25,16 @@ def permutations(s1,takenSoFar,lst):
     
     if len(s1)==0:
         print(takenSoFar)
-        lst.append(takenSoFar)
-        return lst
+        return 
     
     ourchar=s1[0]
     smallinput=s1[1:]
 
     for i in range(0,len(takenSoFar)+1):
-        permutations(smallinput,takenSoFar[0:i]+ourchar+takenSoFar[i:],lst)
+        permutations(smallinput,takenSoFar[0:i]+ourchar+takenSoFar[i:])
 
-    return lst
-permutations('abc','',lst=[])
+    return
+permutations('abc','')
 
     
 

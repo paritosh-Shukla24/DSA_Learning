@@ -77,8 +77,5 @@ print(l1)
 
 
 
-def MergeSort(l1):
-   pass
-
-print(MergeSort())
+ 
     

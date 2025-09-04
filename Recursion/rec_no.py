@@ -1,4 +1,5 @@
 def numb(n):
+    
      
     if n<=0:
         return
@@ -6,7 +7,7 @@ def numb(n):
      
     print(n)
 
-    numb(n-1)
+    numb(n-1) ###Tail Recursion
 
 
     
