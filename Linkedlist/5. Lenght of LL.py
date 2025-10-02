@@ -16,6 +16,23 @@ headOfLL = take_input_better()
 length = lenthOfLL(headOfLL)
 print(length)
 
+def lengthofLL(head):
+    if head==None:
+        return 0
+
+    smallfunct=lengthofLL(head.next)
+
+    return 1+smallfunct
+
+
+
+
+
+
+
+
+
+
 
 def lengthOfLinkedListRecursive(head):
     if(head==None): # Base Case

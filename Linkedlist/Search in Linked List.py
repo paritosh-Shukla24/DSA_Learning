@@ -17,11 +17,29 @@ def search_by_value(head,value):
 
     return "Not Found"
 
-def search_by_value_recursive(head,value):
-    pass
+def search_by_value_recursive(head,value,index=0):
+    if head == None:
+        return None
+    if head.data==value:
+        return index
+
+    return search_by_value_recursive(head.next,value,index+1)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 print("Searching ")
-print(search_by_value(head,5))
+print(search_by_value_recursive(head,5))
 
 
         

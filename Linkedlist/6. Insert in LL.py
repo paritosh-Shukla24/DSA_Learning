@@ -37,10 +37,6 @@ def insert_at_tail_recursively(head,data):
 
     return head
 
-
-
-
-
 def insert_at_index(head,data,index):
     if(index ==0):
         return insert_at_head(head,data)
@@ -61,6 +57,23 @@ def insert_at_index(head,data,index):
     temp.next = newNode
     return head
 
+def insert_at_index(head,data,index):
+    newNode = Node(data)
+
+    if index == 0:
+        return insert_at_head(head,data)
+
+    if head == None:
+        print("Index out of bounds, please check index")
+        return head
+    head.next=insert_at_index(head.next,data,index-1)
+    return head
+
+
+
+
+
+
 
 def insert_at_index_recursively(head,data,index):
     if(index ==0):
@@ -73,7 +86,7 @@ def insert_at_index_recursively(head,data,index):
 
     return head
 
-head = insert_at_index_recursively(head,35,3)
+head = insert_at_index(head,35,3)
 print("After Inserting at Index")
 print_LL(head)
 

@@ -1,15 +1,16 @@
+
+
 from common import Node,take_input_better,print_LL
 
 head = take_input_better()
 
-def delete_at_head(head):
-    if(head is None): # My LL is Empty
-        return None
-    newHead = head.next
-    return newHead
-
-
 print_LL(head)
+def delete_at_head(head):
+    if(head is None):
+        return None
+    head=head.next
+    return head
+print_LL(delete_at_head(head))
 
 def is_tail_node(node):
     if(node==None):
@@ -19,64 +20,26 @@ def is_tail_node(node):
     return False
 
 def delete_at_tail(head):
-    if(head is None or head.next is None):
-        return None # if the list is empty or has one Node
-    
-    temp = head
-    while(temp.next.next is not None):
-        temp=temp.next
-    print("Data of Node we have stopped", temp.data)
-    temp.next = None
-    return head
-    
-
-def delete_at_tail_recursive(head):
-    if(head is None): # Base Case
-        return None
-    
-    if(head.next is None):
-        return None
-    
-    head.next = delete_at_tail_recursive(head.next)
-    return head
-
-
-def delete_at_index(head,index):
-    if(head==None):
-        print("LL is Empty")
-        return head
-
-    if(index==0):
-        return head.next 
-    
-    temp = head
-    count =0
-
-    while(temp is not None and count<index-1):
-        temp=temp.next
-        count+=1
-
-    if(temp is None or temp.next is None):
-        print("Out of Bounds")
-        return head
-    
-    nodeToBeDeleted = temp.next
-    nodeAfterDeletedNode = nodeToBeDeleted.next
-    
-    temp.next = nodeAfterDeletedNode
-    return head
-
-def delete_at_index_recursion(head,index):
     if(head is None):
-        print("Index is Out of Bounds")
         return None
-
-    if(index ==0):
-        return head.next
-
-    head.next = delete_at_index_recursion(head.next,index-1)
-
+    if head.next is None:
+        return None
+    head.next=delete_at_tail(head.next)
     return head
+print_LL(delete_at_tail(head))
+
+print_LL(head)
+def delete_at_index(head,index):
+    if(head is None):
+        return None
+    if index==0:
+
+        return head.next
+    head.next=delete_at_head(head.next,index-1)
+    return head
+print_LL(delete_at_index(head,0))
+
+
 
 def delete_a_node_by_value(head,value):
     if(head is None):
